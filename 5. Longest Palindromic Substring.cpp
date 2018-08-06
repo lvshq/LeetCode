@@ -17,6 +17,15 @@ DP formula:
 DP(i, i) = True
 DP(i, i+1) = (S(i) == S(i+1))
 DP(i, j) = DP(i+1, j-1) & (S(i) == S(j))
+
+
+Complexity Analysis
+
+Time complexity : O(n^2)
+This gives us a runtime complexity of O(n^2).
+
+Space complexity : O(n^2).
+It uses O(n^2) space to store the table.
 */
 class Solution {
 public:
