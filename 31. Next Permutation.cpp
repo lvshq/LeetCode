@@ -41,22 +41,33 @@ public:
                     break;
                 }
             }
-            swap(nums, pivot_index, right_pivot_index);
+            /*
+            In <algotirhm.h>, there is:
+                void swap( T& a, T& b )
+            */
+            // swap(nums, pivot_index, right_pivot_index);
+            swap(nums[pivot_index], nums[right_pivot_index]);
         }
-        reverse(nums, pivot_index + 1, len - 1);
+        /*
+        In <algotirhm.h>, there exists:
+            void reverse (BidirectionalIterator first, BidirectionalIterator last)
+        use this will improve effciency.
+        */
+        // reverse(nums, pivot_index + 1, len - 1);
+        reverse(nums.begin() + pivot_index + 1, nums.end());
     }
 
-    void swap(vector<int> &nums, int index1, int index2) {
-        int temp = nums[index1];
-        nums[index1] = nums[index2];
-        nums[index2] = temp;
-    }
+//     void swap(vector<int> &nums, int index1, int index2) {
+//         int temp = nums[index1];
+//         nums[index1] = nums[index2];
+//         nums[index2] = temp;
+//     }
 
-    void reverse(vector<int> &nums, int index1, int index2) {
-        while (index2 > index1) {
-            swap(nums, index1, index2);
-            index2--;
-            index1++;
-        }
-    }
+//     void reverse(vector<int> &nums, int index1, int index2) {
+//         while (index2 > index1) {
+//             swap(nums, index1, index2);
+//             index2--;
+//             index1++;
+//         }
+//     }
 };
